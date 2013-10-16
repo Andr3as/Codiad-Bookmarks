@@ -14,4 +14,4 @@ Set bookmarks and jump between them.
 
 ##Example
 
-![Example](http://andrano.de/Plugins/img/breakpoint.jpg "Example")
+![Example](http://andrano.de/Plugins/img/breakpoints.jpg "Example")
