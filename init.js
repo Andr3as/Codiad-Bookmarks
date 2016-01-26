@@ -88,11 +88,11 @@
         //////////////////////////////////////////////////////////
         new: function(line) {
             var session = codiad.editor.getActive().getSession();
-            if (session.getBreakpoints().indexOf(line) !== -1) {
+            if (this.getPoints().indexOf(line) !== -1) {
                 //Breakpoint already exits, remove it
                 session.clearBreakpoint(line);
             } else {
-                session.setBreakpoint(line, line);
+                session.setBreakpoint(line, line + ' bookmark');
             }
             
         },
@@ -161,10 +161,11 @@
         //////////////////////////////////////////////////////////
         getPoints: function() {
             var session = codiad.editor.getActive().getSession();
-            var points = session.getBreakpoints();
+            var points  = session.getBreakpoints();
             var buf = [];
             $.each(points, function(i, item){
                 if (typeof(item) != 'undefined') {
+                    item = parseInt(item.replace(' bookmark', ''));
                     buf.push(item);
                 }
             });
